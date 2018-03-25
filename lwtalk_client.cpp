@@ -1,4 +1,3 @@
-#define _GNU_SOURCE 1
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -38,7 +37,7 @@ int main( int argc, char* argv[] )
         return 1;
     }
 
-	//Ê¹ÓÃpoll¼¼Êõ½øĞĞ¼àÌı
+	//ä½¿ç”¨pollæŠ€æœ¯è¿›è¡Œç›‘å¬
     pollfd fds[2];
     fds[0].fd = 0;
     fds[0].events = POLLIN;
@@ -47,7 +46,7 @@ int main( int argc, char* argv[] )
     fds[1].events = POLLIN | POLLRDHUP;
     fds[1].revents = 0;
     char read_buf[BUFFER_SIZE];
-	//Ê¹ÓÃ¹ÜµÀÍ¨ĞÅ
+	//ä½¿ç”¨ç®¡é“é€šä¿¡
     int pipefd[2];
     int ret = pipe( pipefd );
     assert( ret != -1 );
